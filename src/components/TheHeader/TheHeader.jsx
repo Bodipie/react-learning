@@ -1,13 +1,20 @@
 import "./TheHeader.css";
 
-function TheHeader() {
+
+// links has name & url
+
+function TheHeader({links}) {
   return (
     <header className="the-header">
       <nav>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            {
+                links.map(({url, name}) => (
+                  <li>
+                    <a href={url}>{name}</a>
+                  </li>
+                ))
+            }
         </ul>
       </nav>
     </header>
